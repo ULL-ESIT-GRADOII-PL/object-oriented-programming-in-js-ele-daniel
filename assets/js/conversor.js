@@ -32,6 +32,9 @@
     Celsius.prototype = {
         toFahrenheit: function(value) {
             return ((this.valor * 9/5)+32);
+        },
+        toCelsius: function(value) {
+            return this.valor;
         }
     }
 
@@ -42,20 +45,16 @@
     Fahrenheit.prototype = {
         toCelsius: function(value) {
             return ((this.valor - 32)*5/9);
-        }
+        },
+        toFahrenheit: function(value) {
+            return this.valor
+        },
     }
 
     exports.Temperatura = Temperatura;
     exports.Celsius = Celsius;
     exports.Fahrenheit = Fahrenheit;
 
-    // Tengo la expresion general parseo un entero en ya sea en notacion
-    // cientifica o no
-    // y algun tipo de conversion
-    // despues tener un array y recorrerlo aplicando el metodo parse measure hasta encontrar uno valido
-
-
-    // Claro lo de arriba puede ir mal con lo que añadir parsers para las opciones 30f to c, 30f c
     exports.convertir = function() {
         var valor     = document.getElementById('convert').value,
             elemento  = document.getElementById('converted');
@@ -65,29 +64,41 @@
             + "|(c(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?))";
 
         var inputRegex = XRegExp (""
-                                  + '^(\\s*)                                         # whitespaces \n'
-                                  + '(?<value>       [-+]?\\d+ (?:[\\.,]\\d*)?\\s*)  # captures the number   \n'
-                                  + '((e(?<exponent> [-+]?\\d+)\\s*)?)               # captures the exponent \n'
-                                  + '(?<kind>       ' + measures + ')                # Capture kind of value \n'
-                                  + '(\\s*)$                                         # whitespaces \n'
+                                  + '^(\\s*)                                            # whitespaces \n'
+                                  + '(?<value>       [-+]?\\d+ (?:[\\.,]\\d*)?\\s*)     # captures the number   \n'
+                                  + '((e(?<exponent> [-+]?\\d+)\\s*)?)                  # captures the exponent \n'
+                                  + '(?<kind>       ' + measures + ')                   # Capture kind of value \n'
+                                  + '((?:\\s+to)?\\s+ (?<to>' + measures + '))?         # Get "to" syntax \n'
+                                  + '(\\s*)$                                            # whitespaces \n'
                                   , 'xi');
 
         valor = XRegExp.exec(valor, inputRegex);
 
+        function toX(obj, str) {
+            switch (str.toLowerCase() || 'c') {
+            case 'c':
+                return obj.toCelsius().toFixed(2) + "Celsius";
+            case 'f':
+                return obj.toFahrenheit().toFixed(2) + "Fahrenheit";
+            default:
+                return "Bad javascript";
+            }
+        };
+
         if (valor) {
-            var numero = parseFloat(valor.value), // Int
-                tipo   = valor.kind;           // String
+            var numero = parseFloat(valor.value),
+                tipo   = valor.kind;
 
             console.log("Valor: " + numero + ", Tipo: " + tipo);
 
             switch (tipo) {
             case 'c':
                 var celsius = new Celsius(numero);
-                elemento.innerHTML = celsius.toFahrenheit().toFixed(2) + " Farenheit";
+                elemento.innerHTML = toX(celsius, valor.to || 'f');
                 break;
             case 'f':
                 var fahrenheit = new Fahrenheit(numero);
-                elemento.innerHTML = fahrenheit.toCelsius().toFixed(2) + " Celsius";
+                elemento.innerHTML = toX(fahrenheit, valor.to);
                 break;
             // case 'k':
             //     var kelvin = new Kelvin(numero);

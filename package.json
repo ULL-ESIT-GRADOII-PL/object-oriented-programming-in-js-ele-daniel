@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aluXXXXXXX/STW03.git"
+      "url": "https://github.com/ULL-ESIT-GRADOII-PL/object-oriented-programming-in-js-ele-daniel"
   },
   "keywords": [
     "conversor"
@@ -17,9 +17,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aluXXXXXXX/STW03/issues"
+      "url": "https://github.com/ULL-ESIT-GRADOII-PL/object-oriented-programming-in-js-ele-daniel/issues"
   },
-  "homepage": "https://github.com/aluXXXXXXX/STW03",
+    "homepage": "https://ULL-ESIT-GRADOII-PL.github.com/object-oriented-programming-in-js-ele-daniel",
   "devDependencies": {
   }
 }

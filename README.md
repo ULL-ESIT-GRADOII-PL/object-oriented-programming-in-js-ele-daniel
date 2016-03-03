@@ -16,3 +16,7 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 * [Web Daniel](http://alu0100783230.github.io/)
 * [Web Eleazar](http://elediaz.github.io/public/portafolio.html)
 
+
+**Página de la práctica**
+
+* [Página de la asignatura](https://campusvirtual.ull.es/1516/mod/page/view.php?id=177984)

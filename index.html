@@ -22,6 +22,7 @@
 
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="xregexp-all.js"></script>
   <script type="text/javascript" src="assets/js/conversor.js"></script>
   
   <!-- FAVICON
@@ -35,7 +36,16 @@
     <h4>Conversor</h4>
     <div class="row">
       <div class="one-half column">
-        <p>Este conversor te permite hacer conversiones de Temperaturas (Celsius y Farenheit) Ejemplo: 23C para Celsius.</p>
+        <p>
+            Este conversor de temperaturas permite cambiar entre grados fahrenheit a celsius y viceversa.
+            Solo debe ingresar la cantidad de grados denotando la unidad al final de la entrada, tal y como haría
+            normalmente, por ejemplo: 12C, para indicar 12 grados celsius.
+        </p>
+        <p>
+            Además se puede usar notación científica si se desea convertir unidades grandes. En este caso la
+            sintaxis varía mínimamente: "12.45E-8Fahrenheit" por ejemplo, también se puede optar por escribir la
+            e en minúscula.
+        </p>
         <label>Introduzca un valor</label>
         <input id="convert" class="u-full-width" type="text" autofocus oninput="convertir();" placeholder="Introduzca un valor">
         <span id="converted"></span>
@@ -47,10 +57,13 @@
       <div class="container">
         <div class="row">
           <div class="one-half column">
-            <a href="">Repositorio del código</a>
+              <a href="https://github.com/ULL-ESIT-GRADOII-PL/object-oriented-programming-in-js-ele-daniel">Repositorio del código</a>
           </div>
           <div class="one-half column">
-            <a href="">Web del autor</a>
+              <a href="http://alu0100783230.github.io/">Web del autor, Daniel</a>
+          </div>
+          <div class="one-half column">
+              <a href="http://elediaz.github.io/public/portafolio.html">Web del autor, Eleazar</a>
           </div>
         </div>
       </div>

@@ -5,13 +5,18 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 **Repositorio GitHuB**
 
-* [Repositorio]()
+* [Repositorio](https://github.com/ULL-ESIT-GRADOII-PL/object-oriented-programming-in-js-ele-daniel)
 
 **Página de la práctica**
 
-* [Web]()
+* [Web](http://ull-esit-gradoii-pl.github.io/object-oriented-programming-in-js-ele-daniel/)
 
-**Página del autor**
+**Páginas de los autores**
 
-* [Web Author]()
+* [Web Daniel](http://alu0100783230.github.io/)
+* [Web Eleazar](http://elediaz.github.io/public/portafolio.html)
 
+
+**Página de la práctica**
+
+* [Página de la asignatura](https://campusvirtual.ull.es/1516/mod/page/view.php?id=177984)
